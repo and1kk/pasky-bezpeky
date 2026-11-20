@@ -4,21 +4,21 @@
    ========================================================================== */
 
 :root {
-  --bg-body: #EAEAE6;
-  --bg-slide: #FFFFFF;
-  --bg-panel: #F5F5F2;
+  --bg-body: #C8CAC5;
+  --bg-slide: #E6E7E2;
+  --bg-panel: #D8DAD4;
   --ink: #111111;
-  --ink-secondary: #333333;
-  --ink-muted: #555555;
-  --line: #CCCCCC;
-  --line-dark: #222222;
+  --ink-secondary: #2B2D2F;
+  --ink-muted: #4A4D50;
+  --line: #A8ABA4;
+  --line-dark: #1C1E21;
 
   --blue: #0B3C68;
-  --blue-light: #E8F0F8;
+  --blue-light: #D4E1EE;
   --red: #B81D13;
-  --red-light: #FDECEB;
+  --red-light: #F2D6D4;
   --green: #146334;
-  --green-light: #E7F4EC;
+  --green-light: #D3E6DA;
   --amber: #E05A00;
 }
 
@@ -330,7 +330,7 @@ canvas {
   padding: 10px 12px;
   font-size: 0.98rem;
   font-weight: 700;
-  background: #FFFFFF;
+  background: var(--bg-slide);
   color: var(--ink);
   border: 2px solid var(--line-dark);
   cursor: pointer;
@@ -366,14 +366,14 @@ canvas {
   padding: 12px 18px;
   font-size: 1.05rem;
   font-weight: 700;
-  background: #FFFFFF;
+  background: var(--bg-slide);
   color: var(--ink);
   border: 2px solid var(--line-dark);
   cursor: pointer;
 }
 
 .btn-action-reset:hover {
-  background: #E2E2DE;
+  background: #C5C7C1;
 }
 
 input[type="range"] {
@@ -479,7 +479,7 @@ input[type="range"] {
   font-size: 0.95rem;
   font-weight: 800;
   border: 2px solid var(--line-dark);
-  background: #FFFFFF;
+  background: var(--bg-slide);
   color: var(--ink);
   cursor: pointer;
 }
@@ -634,7 +634,7 @@ input[type="range"] {
 }
 
 .plan-speech {
-  background: #FFFFFF;
+  background: #EFEFE9;
   border-left: 4px solid var(--blue);
   padding: 12px 16px;
   margin: 10px 0;
