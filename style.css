@@ -1,0 +1,523 @@
+/* ==========================================================================
+   Класичний інженерно-академічний стиль (без AI-шаблонів, плашок і градієнтів)
+   Висока контрастність для показу на проекторі / екрані в класі
+   ========================================================================== */
+
+:root {
+  --bg-body: #EAEAE6;
+  --bg-slide: #FFFFFF;
+  --bg-panel: #F5F5F2;
+  --ink: #111111;
+  --ink-secondary: #333333;
+  --ink-muted: #555555;
+  --line: #CCCCCC;
+  --line-dark: #222222;
+
+  --blue: #0B3C68;
+  --blue-light: #E8F0F8;
+  --red: #B81D13;
+  --red-light: #FDECEB;
+  --green: #146334;
+  --green-light: #E7F4EC;
+  --amber: #E05A00;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  width: 100%;
+  min-height: 100vh;
+  background: var(--bg-body);
+  color: var(--ink);
+  font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+.deck-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 12px 20px;
+  gap: 12px;
+}
+
+/* Верхня класична шапка в стилі креслення / презентації */
+.header-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--bg-slide);
+  border: 2px solid var(--line-dark);
+  padding: 10px 20px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.header-left {
+  display: flex;
+  align-items: baseline;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
+.header-num {
+  font-family: Consolas, "Courier New", monospace;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--bg-slide);
+  background: var(--line-dark);
+  padding: 3px 10px;
+}
+
+.header-topic {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.header-author {
+  font-size: 1rem;
+  color: var(--ink-secondary);
+  border-left: 2px solid var(--line);
+  padding-left: 16px;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.btn-util {
+  background: var(--bg-panel);
+  color: var(--ink);
+  border: 2px solid var(--line-dark);
+  padding: 7px 14px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.btn-util:hover {
+  background: var(--line-dark);
+  color: #FFFFFF;
+}
+
+/* Основне полотно слайда */
+.slide-stage {
+  flex: 1;
+  background: var(--bg-slide);
+  border: 2px solid var(--line-dark);
+  padding: 28px 36px;
+  display: flex;
+  flex-direction: column;
+}
+
+.slide {
+  display: none;
+  flex-direction: column;
+  flex: 1;
+  gap: 22px;
+}
+
+.slide.active {
+  display: flex;
+}
+
+/* Заголовок слайда */
+.slide-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 3px solid var(--line-dark);
+  padding-bottom: 12px;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.slide-type-tag {
+  font-size: 0.9rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 4px 10px;
+  border: 2px solid var(--line-dark);
+}
+
+.tag-theory {
+  background: var(--blue-light);
+  color: var(--blue);
+  border-color: var(--blue);
+}
+
+.tag-demo {
+  background: var(--red-light);
+  color: var(--red);
+  border-color: var(--red);
+}
+
+.slide-h1 {
+  font-size: 1.95rem;
+  font-weight: 800;
+  color: var(--ink);
+  flex: 1;
+}
+
+.slide-eq-header {
+  font-family: "Cambria Math", "Times New Roman", Georgia, serif;
+  font-size: 1.55rem;
+  font-weight: 700;
+  color: var(--blue);
+  background: var(--bg-panel);
+  border: 2px solid var(--line-dark);
+  padding: 4px 16px;
+}
+
+/* Макет ТЕОРІЇ: великий шрифт, чіткі формули, таблиці */
+.theory-layout {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 32px;
+  flex: 1;
+  align-items: start;
+}
+
+.theory-col {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.big-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.big-list li {
+  font-size: 1.22rem;
+  line-height: 1.55;
+  color: var(--ink);
+  padding-left: 26px;
+  position: relative;
+}
+
+.big-list li::before {
+  content: "■";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--blue);
+  font-size: 1rem;
+}
+
+.formula-box {
+  background: var(--bg-panel);
+  border: 2px solid var(--line-dark);
+  padding: 18px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.formula-big {
+  font-family: "Cambria Math", "Times New Roman", Georgia, serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.formula-explain {
+  font-size: 1.05rem;
+  color: var(--ink-secondary);
+}
+
+/* Таблиці даних (замість AI-карток) */
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 1.05rem;
+}
+
+.data-table th,
+.data-table td {
+  border: 2px solid var(--line-dark);
+  padding: 10px 14px;
+  text-align: left;
+}
+
+.data-table th {
+  background: var(--bg-panel);
+  font-weight: 800;
+  color: var(--ink);
+}
+
+.data-table td.num {
+  font-family: Consolas, "Courier New", monospace;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+/* Макет ПОКАЗУ (СИМУЛЯЦІЇ): великий екран + панель керування */
+.demo-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  flex: 1;
+}
+
+.canvas-frame {
+  width: 100%;
+  background: #FFFFFF;
+  border: 2px solid var(--line-dark);
+  position: relative;
+}
+
+canvas {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.controls-strip {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+  background: var(--bg-panel);
+  border: 2px solid var(--line-dark);
+  padding: 16px 20px;
+  align-items: end;
+}
+
+.ctrl-block {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.ctrl-title {
+  font-size: 1rem;
+  font-weight: 800;
+  color: var(--ink);
+  display: flex;
+  justify-content: space-between;
+}
+
+.ctrl-readout {
+  font-family: Consolas, monospace;
+  font-size: 1.1rem;
+  color: var(--red);
+  font-weight: 800;
+}
+
+.btn-group {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.btn-choice {
+  flex: 1;
+  min-width: 70px;
+  padding: 10px 12px;
+  font-size: 0.98rem;
+  font-weight: 700;
+  background: #FFFFFF;
+  color: var(--ink);
+  border: 2px solid var(--line-dark);
+  cursor: pointer;
+}
+
+.btn-choice:hover {
+  background: var(--blue-light);
+}
+
+.btn-choice.active {
+  background: var(--blue);
+  color: #FFFFFF;
+  border-color: var(--blue);
+}
+
+.btn-action-run {
+  padding: 12px 22px;
+  font-size: 1.1rem;
+  font-weight: 800;
+  background: var(--red);
+  color: #FFFFFF;
+  border: 2px solid var(--line-dark);
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.btn-action-run:hover {
+  background: #94140C;
+}
+
+.btn-action-reset {
+  padding: 12px 18px;
+  font-size: 1.05rem;
+  font-weight: 700;
+  background: #FFFFFF;
+  color: var(--ink);
+  border: 2px solid var(--line-dark);
+  cursor: pointer;
+}
+
+.btn-action-reset:hover {
+  background: #E2E2DE;
+}
+
+input[type="range"] {
+  width: 100%;
+  height: 10px;
+  accent-color: var(--blue);
+  cursor: pointer;
+}
+
+/* Титульний слайд */
+.title-sheet {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 36px;
+  flex: 1;
+  align-items: center;
+}
+
+.title-main-h1 {
+  font-size: 3rem;
+  font-weight: 900;
+  line-height: 1.1;
+  color: var(--ink);
+  margin: 12px 0 18px;
+}
+
+.title-lead {
+  font-size: 1.25rem;
+  color: var(--ink-secondary);
+  margin-bottom: 24px;
+}
+
+.author-stamp {
+  border: 2px solid var(--line-dark);
+  background: var(--bg-panel);
+  padding: 18px 24px;
+  margin-bottom: 24px;
+}
+
+.author-stamp-label {
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--ink-muted);
+}
+
+.author-stamp-name {
+  font-size: 1.45rem;
+  font-weight: 800;
+  color: var(--ink);
+  margin-top: 4px;
+}
+
+/* Нижня панель навігації */
+.footer-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--bg-slide);
+  border: 2px solid var(--line-dark);
+  padding: 10px 20px;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.btn-nav {
+  padding: 12px 26px;
+  font-size: 1.05rem;
+  font-weight: 800;
+  background: var(--bg-panel);
+  color: var(--ink);
+  border: 2px solid var(--line-dark);
+  cursor: pointer;
+}
+
+.btn-nav:hover:not(:disabled) {
+  background: var(--line-dark);
+  color: #FFFFFF;
+}
+
+.btn-nav.primary {
+  background: var(--blue);
+  color: #FFFFFF;
+}
+
+.btn-nav.primary:hover:not(:disabled) {
+  background: #062644;
+}
+
+.btn-nav:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+.page-buttons {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.page-btn {
+  padding: 8px 13px;
+  font-size: 0.95rem;
+  font-weight: 800;
+  border: 2px solid var(--line-dark);
+  background: #FFFFFF;
+  color: var(--ink);
+  cursor: pointer;
+}
+
+.page-btn.active {
+  background: var(--red);
+  color: #FFFFFF;
+}
+
+/* Бліц-питання */
+.qa-block {
+  border: 2px solid var(--line-dark);
+  padding: 16px 20px;
+  background: var(--bg-panel);
+}
+
+.qa-question {
+  font-size: 1.15rem;
+  font-weight: 800;
+  margin-bottom: 10px;
+}
+
+.qa-answer {
+  display: none;
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 2px solid var(--line-dark);
+  font-size: 1.08rem;
+  color: var(--ink);
+}
+
+.qa-answer.open {
+  display: block;
+}
+
+@media (max-width: 1024px) {
+  .theory-layout,
+  .title-sheet {
+    grid-template-columns: 1fr;
+  }
+}

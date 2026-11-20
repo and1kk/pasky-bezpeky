@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Паски безпеки в транспорті — Дмитренко Андрій, 10-А</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="deck-wrapper">
+    <!-- Верхній колонтитул -->
+    <header class="header-bar">
+      <div class="header-left">
+        <span class="header-num" id="slideCounter">СЛАЙД 1 / 9</span>
+        <span class="header-topic">Тема №2. Паски безпеки в транспорті</span>
+        <span class="header-author">Дмитренко Андрій Володимирович, 10-А клас</span>
+      </div>
+      <div class="header-right">
+        <button class="btn-util" id="btnFullscreen">На весь екран [F]</button>
+      </div>
+    </header>
+
+    <!-- Полотно слайдів -->
+    <main class="slide-stage">
+
+      <!-- ================================================================
+           СЛАЙД 1: ТИТУЛЬНИЙ ЛИСТ
+           ================================================================ -->
+      <section class="slide active" data-slide="0">
+        <div class="title-sheet">
+          <div>
+            <div style="font-weight: 800; color: var(--blue); text-transform: uppercase; letter-spacing: 0.06em;">
+              Навчальний проєкт з фізики • 10 клас
+            </div>
+            <h1 class="title-main-h1">Паски безпеки в транспорті</h1>
+            <p class="title-lead">
+              Фізичні основи роботи систем пасивної безпеки автомобіля.
+            </p>
+            <div class="author-stamp">
+              <div class="author-stamp-label">Виконав:</div>
+              <div class="author-stamp-name">Дмитренко Андрій Володимирович, 10-А клас</div>
+            </div>
+            <button class="btn-action-run" onclick="goToSlide(1)">
+              Почати презентацію →
+            </button>
+          </div>
+
+          <div>
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>№</th>
+                  <th>Фізичний закон</th>
+                  <th>Основна формула</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="num">1</td>
+                  <td>Перший закон Ньютона (Інерція)</td>
+                  <td class="num">∑F⃗ = 0 ⇒ v⃗ = const</td>
+                </tr>
+                <tr>
+                  <td class="num">2</td>
+                  <td>Кінематика гальмування</td>
+                  <td class="num">a = v₀² / (2 · s)</td>
+                </tr>
+                <tr>
+                  <td class="num">3</td>
+                  <td>Імпульс тіла та імпульс сили</td>
+                  <td class="num">F⃗ · Δt = m · Δv⃗</td>
+                </tr>
+                <tr>
+                  <td class="num">4</td>
+                  <td>Кінетична енергія та робота</td>
+                  <td class="num">Eₖ = (m · v²) / 2 = F · s</td>
+                </tr>
+                <tr>
+                  <td class="num">5</td>
+                  <td>Механічний тиск на тіло</td>
+                  <td class="num">p = F / S</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================================================================
+           СЛАЙД 2: ТЕОРІЯ №1 — ІНЕРЦІЯ ТА ГАЛЬМІВНИЙ ШЛЯХ (ТІЛЬКИ ОСНОВНЕ)
+           ================================================================ -->
+      <section class="slide" data-slide="1">
+        <div class="slide-top">
+          <span class="slide-type-tag tag-theory">ТЕОРІЯ • РОЗДІЛ 1</span>
+          <h2 class="slide-h1">Перший закон Ньютона та шлях гальмування</h2>
+          <div class="slide-eq-header">∑F⃗ = 0 ⇒ v⃗ = const</div>
+        </div>
+
+        <div class="theory-layout">
+          <div class="theory-col">
+            <div class="formula-box">
+              <div class="formula-big">∑F⃗ = 0  ⇒  v⃗ = v⃗₀ = const</div>
+              <div class="formula-explain">
+                <strong>І закон Ньютона (закон інерції):</strong> тіло зберігає стан рівномірного прямолінійного руху, доки на нього не подіє інше тіло.
+              </div>
+            </div>
+
+            <div class="formula-box">
+              <div class="formula-big">a = v₀² / (2 · s)</div>
+              <div class="formula-explain">
+                <strong>Прискорення гальмування:</strong> обернено пропорційне гальмівному шляху <strong>s</strong>. Що більший шлях зупинки <strong>s</strong>, то менше перевантаження <strong>a</strong>.
+              </div>
+            </div>
+
+            <ul class="big-list">
+              <li><strong>v₀</strong> — початкова швидкість руху (м/с).</li>
+              <li><strong>s</strong> — шлях до повної зупинки тіла (м).</li>
+              <li><strong>n = a / g</strong> — коефіцієнт перевантаження (де g = 9,81 м/с²).</li>
+            </ul>
+          </div>
+
+          <div class="theory-col">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>Параметр (при v₀ = 50 км/год = 13,9 м/с)</th>
+                  <th>Без паска</th>
+                  <th>З паском</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Гальмівний шлях тіла (s)</td>
+                  <td class="num" style="color: var(--red);">0,04 м</td>
+                  <td class="num" style="color: var(--green);">0,55 м</td>
+                </tr>
+                <tr>
+                  <td>Прискорення гальмування (a)</td>
+                  <td class="num" style="color: var(--red);">2415 м/с²</td>
+                  <td class="num" style="color: var(--green);">175 м/с²</td>
+                </tr>
+                <tr>
+                  <td>Перевантаження (n = a / g)</td>
+                  <td class="num" style="color: var(--red);">246 g</td>
+                  <td class="num" style="color: var(--green);">17,9 g</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <button class="btn-action-run" onclick="goToSlide(2)">
+              Перейти до показу (Слайд 3) →
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================================================================
+           СЛАЙД 3: ПОКАЗ №1 — ПОРІВНЯННЯ РУХУ ЗА ІНЕРЦІЄЮ (2 АВТО)
+           ================================================================ -->
+      <section class="slide" data-slide="2">
+        <div class="slide-top">
+          <span class="slide-type-tag tag-demo">ПОКАЗ №1 • СИМУЛЯЦІЯ ІНЕРЦІЇ</span>
+          <h2 class="slide-h1">Порівняння зупинки: без паска (вгорі) та з паском (внизу)</h2>
+          <div class="slide-eq-header">s₁ = 0,04 м  •  s₂ = 0,55 м</div>
+        </div>
+
+        <div class="demo-layout">
+          <div class="canvas-frame">
+            <canvas id="canvasInertia" width="1360" height="420"></canvas>
+          </div>
+
+          <div class="controls-strip">
+            <div class="ctrl-block">
+              <div class="ctrl-title">
+                <span>Початкова швидкість (v₀):</span>
+                <span class="ctrl-readout" id="inertiaSpeedLabel">50 км/год (13,9 м/с)</span>
+              </div>
+              <div class="btn-group" id="inertiaSpeedGroup">
+                <button class="btn-choice" onclick="setInertiaSpeed(30)">30 км/год</button>
+                <button class="btn-choice active" onclick="setInertiaSpeed(50)">50 км/год</button>
+                <button class="btn-choice" onclick="setInertiaSpeed(70)">70 км/год</button>
+                <button class="btn-choice" onclick="setInertiaSpeed(90)">90 км/год</button>
+              </div>
+            </div>
+
+            <div class="ctrl-block">
+              <div class="ctrl-title">
+                <span>Швидкість показу:</span>
+              </div>
+              <div class="btn-group" id="inertiaSlowGroup">
+                <button class="btn-choice active" onclick="setInertiaSlow(true)">Сповільнено (0.2x)</button>
+                <button class="btn-choice" onclick="setInertiaSlow(false)">Реальний час (1x)</button>
+              </div>
+            </div>
+
+            <div class="ctrl-block">
+              <div class="btn-group">
+                <button class="btn-action-run" style="flex: 2;" onclick="startInertiaSim()">▶ Запустити [Пробіл]</button>
+                <button class="btn-action-reset" style="flex: 1;" onclick="resetInertiaSim()">Скинути</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================================================================
+           СЛАЙД 4: ТЕОРІЯ №2 — ДРУГИЙ ЗАКОН НЬЮТОНА ТА ІМПУЛЬС СИЛИ (ОСНОВНЕ)
+           ================================================================ -->
+      <section class="slide" data-slide="3">
+        <div class="slide-top">
+          <span class="slide-type-tag tag-theory">ТЕОРІЯ • РОЗДІЛ 2</span>
+          <h2 class="slide-h1">Другий закон Ньютона та імпульс сили</h2>
+          <div class="slide-eq-header">F⃗ · Δt = Δp⃗</div>
+        </div>
+
+        <div class="theory-layout">
+          <div class="theory-col">
+            <div class="formula-box">
+              <div class="formula-big">p⃗ = m · v⃗₀</div>
+              <div class="formula-explain">
+                <strong>Імпульс тіла:</strong> векторна величина, що дорівнює добутку маси тіла на його швидкість (кг·м/с).
+              </div>
+            </div>
+
+            <div class="formula-box">
+              <div class="formula-big">F_сер = Δp / Δt = (m · v₀) / Δt</div>
+              <div class="formula-explain">
+                <strong>Другий закон Ньютона в імпульсній формі:</strong> сила удару <strong>F</strong> обернено пропорційна тривалості зупинки <strong>Δt</strong>.
+              </div>
+            </div>
+
+            <ul class="big-list">
+              <li>Зміна імпульсу <strong>Δp = m · v₀</strong> при повній зупинці є сталою (<strong>Δp = const</strong>).</li>
+              <li>Збільшення часу зупинки <strong>Δt</strong> прямо пропорційно зменшує силу удару <strong>F</strong>.</li>
+            </ul>
+          </div>
+
+          <div class="theory-col">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>Режим (m = 75 кг, v₀ = 15 м/с, Δp = 1125 Н·с)</th>
+                  <th>Час Δt</th>
+                  <th>Сила F_сер</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Без паска безпеки</td>
+                  <td class="num" style="color: var(--red);">0,015 с</td>
+                  <td class="num" style="color: var(--red);">75,0 кН (7,6 т)</td>
+                </tr>
+                <tr>
+                  <td>Жорсткий ремінь</td>
+                  <td class="num">0,050 с</td>
+                  <td class="num">22,5 кН (2,3 т)</td>
+                </tr>
+                <tr>
+                  <td>Сучасний 3-точковий пасок</td>
+                  <td class="num" style="color: var(--green);">0,110 с</td>
+                  <td class="num" style="color: var(--green);">10,2 кН (1,0 т)</td>
+                </tr>
+                <tr>
+                  <td>Пасок + Подушка Airbag</td>
+                  <td class="num" style="color: var(--green);">0,140 с</td>
+                  <td class="num" style="color: var(--green);">8,0 кН (0,8 т)</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <button class="btn-action-run" onclick="goToSlide(4)">
+              Перейти до стенду краш-тесту (Слайд 5) →
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================================================================
+           СЛАЙД 5: ПОКАЗ №2 — СТЕНД КРАШ-ТЕСТУ + ОСЦИЛОГРАФ F(t)
+           ================================================================ -->
+      <section class="slide" data-slide="4">
+        <div class="slide-top">
+          <span class="slide-type-tag tag-demo">ПОКАЗ №2 • СТЕНД КРАШ-ТЕСТУ</span>
+          <h2 class="slide-h1">Моделювання удару та графік імпульсу сили F(t)</h2>
+          <div class="slide-eq-header">F_сер = Δp / Δt</div>
+        </div>
+
+        <div class="demo-layout">
+          <div class="canvas-frame">
+            <canvas id="canvasCrashLab" width="1360" height="400"></canvas>
+          </div>
+
+          <div class="controls-strip">
+            <div class="ctrl-block">
+              <div class="ctrl-title">
+                <span>Швидкість v₀:</span>
+                <span class="ctrl-readout" id="labSpeedText">64 км/год</span>
+              </div>
+              <input type="range" id="labSpeedSlider" min="25" max="110" step="1" value="64" oninput="updateCrashLab()" />
+              <div class="btn-group">
+                <button class="btn-choice" onclick="setLabSpeed(40)">40</button>
+                <button class="btn-choice" onclick="setLabSpeed(50)">50</button>
+                <button class="btn-choice active" onclick="setLabSpeed(64)">64 (EuroNCAP)</button>
+                <button class="btn-choice" onclick="setLabSpeed(90)">90</button>
+              </div>
+            </div>
+
+            <div class="ctrl-block">
+              <div class="ctrl-title">
+                <span>Маса m:</span>
+                <span class="ctrl-readout" id="labMassText">75 кг</span>
+              </div>
+              <input type="range" id="labMassSlider" min="45" max="105" step="5" value="75" oninput="updateCrashLab()" />
+              <div class="btn-group">
+                <button class="btn-choice" onclick="setLabMass(50)">50 кг</button>
+                <button class="btn-choice active" onclick="setLabMass(75)">75 кг</button>
+                <button class="btn-choice" onclick="setLabMass(95)">95 кг</button>
+              </div>
+            </div>
+
+            <div class="ctrl-block">
+              <div class="ctrl-title"><span>Система утримання:</span></div>
+              <div class="btn-group" id="labModeGroup">
+                <button class="btn-choice" onclick="setLabMode(0)">Без паска</button>
+                <button class="btn-choice active" onclick="setLabMode(1)">3-точковий пасок</button>
+                <button class="btn-choice" onclick="setLabMode(2)">Пасок + Airbag</button>
+              </div>
+            </div>
+
+            <div class="ctrl-block">
+              <div class="btn-group">
+                <button class="btn-action-run" style="flex: 2;" onclick="runCrashLabAnim()">▶ Удар [Пробіл]</button>
+                <button class="btn-action-reset" style="flex: 1;" onclick="resetCrashLabAnim()">Скинути</button>
+              </div>
+            </div>
+          </div>
+
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Імпульс p = m·v₀</th>
+                <th>Енергія Eₖ</th>
+                <th>Час Δt</th>
+                <th>Середня сила F_сер</th>
+                <th>Перевантаження</th>
+                <th>Стан</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="num" id="labCellP">1333 кг·м/с</td>
+                <td class="num" id="labCellEk">11,9 кДж</td>
+                <td class="num" id="labCellDt">95 мс</td>
+                <td class="num" id="labCellF">14,0 кН (1,43 т)</td>
+                <td class="num" id="labCellG">19,1 g</td>
+                <td id="labCellVerdict" style="font-weight: 800; color: var(--green);">В межах норми</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- ================================================================
+           СЛАЙД 6: ТЕОРІЯ №3 — КІНЕТИЧНА ЕНЕРГІЯ ТА ТИСК (ТІЛЬКИ ОСНОВНЕ)
+           ================================================================ -->
+      <section class="slide" data-slide="5">
+        <div class="slide-top">
+          <span class="slide-type-tag tag-theory">ТЕОРІЯ • РОЗДІЛ 3</span>
+          <h2 class="slide-h1">Кінетична енергія, механічна робота та тиск</h2>
+          <div class="slide-eq-header">Eₖ = (m·v²)/2  •  p = F / S</div>
+        </div>
+
+        <div class="theory-layout">
+          <div class="theory-col">
+            <div class="formula-box">
+              <div class="formula-big">Eₖ = (m · v²) / 2 = F_сер · s</div>
+              <div class="formula-explain">
+                <strong>Теорема про кінетичну енергію:</strong> робота сили опору паска дорівнює зміні кінетичної енергії тіла. Енергія зростає пропорційно <strong>квадрату швидкості (v²)</strong>.
+              </div>
+            </div>
+
+            <div class="formula-box">
+              <div class="formula-big">h_екв = v² / (2 · g)</div>
+              <div class="formula-explain">
+                <strong>Еквівалентна висота вільного падіння</strong> (із закону збереження енергії m·v²/2 = m·g·h).
+              </div>
+            </div>
+          </div>
+
+          <div class="theory-col">
+            <div class="formula-box">
+              <div class="formula-big">p = F / S</div>
+              <div class="formula-explain">
+                <strong>Механічний тиск (Па):</strong> відношення сили натягу паска <strong>F</strong> до площі прилягання стрічки <strong>S</strong>.
+              </div>
+            </div>
+
+            <ul class="big-list">
+              <li>Стандартна ширина стрічки паска: <strong>b = 47 мм</strong>.</li>
+              <li>Площа прилягання триточкового паска: <strong>S ≈ 280 см² (0,028 м²)</strong>.</li>
+              <li>Автор триточкової схеми (плече + таз): <strong>Нільс Болін (Volvo, 1959 р.)</strong>.</li>
+            </ul>
+
+            <button class="btn-action-run" onclick="goToSlide(6)">
+              Перейти до показу енергії та тиску (Слайд 7) →
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================================================================
+           СЛАЙД 7: ПОКАЗ №3 — ЕНЕРГІЯ ПАДІННЯ З БУДИНКУ + ТИСК НА СКЕЛЕТ
+           ================================================================ -->
+      <section class="slide" data-slide="6">
+        <div class="slide-top">
+          <span class="slide-type-tag tag-demo">ПОКАЗ №3 • ЕНЕРГІЯ ТА ТИСК</span>
+          <h2 class="slide-h1">Висота падіння h = v²/(2g) та розподіл тиску p = F/S</h2>
+          <div class="slide-eq-header">Eₖ ~ v²  •  p = F / S</div>
+        </div>
+
+        <div class="demo-layout">
+          <div class="canvas-frame">
+            <canvas id="canvasEnergyPressure" width="1360" height="410"></canvas>
+          </div>
+
+          <div class="controls-strip">
+            <div class="ctrl-block">
+              <div class="ctrl-title">
+                <span>1. Швидкість авто (ліворуч):</span>
+                <span class="ctrl-readout" id="epSpeedVal">50 км/год (h = 9,8 м)</span>
+              </div>
+              <input type="range" id="epSpeedSlider" min="20" max="115" step="5" value="50" oninput="updateEnergyPressure()" />
+              <div class="btn-group">
+                <button class="btn-choice" onclick="setEpSpeed(30)">30 км/год</button>
+                <button class="btn-choice active" onclick="setEpSpeed(50)">50 км/год</button>
+                <button class="btn-choice" onclick="setEpSpeed(80)">80 км/год</button>
+                <button class="btn-choice" onclick="setEpSpeed(100)">100 км/год</button>
+              </div>
+            </div>
+
+            <div class="ctrl-block">
+              <div class="ctrl-title">
+                <span>2. Тип паска при F = 14 кН (праворуч):</span>
+                <span class="ctrl-readout" id="epPressureVal">p = 500 кПа</span>
+              </div>
+              <div class="btn-group" id="epBeltGroup">
+                <button class="btn-choice" onclick="setEpBelt(0)">Вузький трос (6 мм)</button>
+                <button class="btn-choice" onclick="setEpBelt(1)">2-точковий ремінь</button>
+                <button class="btn-choice active" onclick="setEpBelt(2)">3-точковий пасок (47 мм)</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================================================================
+           СЛАЙД 8: ПОКАЗ №4 — МЕХАНІКА ІНЕРЦІЙНОЇ КОТУШКИ В РОЗРІЗІ
+           ================================================================ -->
+      <section class="slide" data-slide="7">
+        <div class="slide-top">
+          <span class="slide-type-tag tag-demo">ПОКАЗ №4 • БУДОВА МЕХАНІЗМУ</span>
+          <h2 class="slide-h1">Інерційна котушка: храпове колесо, кулька-датчик і торсіон</h2>
+          <div class="slide-eq-header">a_блокування > 0,7g (6,8 м/с²)</div>
+        </div>
+
+        <div class="demo-layout">
+          <div class="canvas-frame">
+            <canvas id="canvasReel" width="1360" height="410"></canvas>
+          </div>
+
+          <div class="controls-strip">
+            <div class="ctrl-block">
+              <div class="ctrl-title"><span>Режим роботи котушки:</span></div>
+              <div class="btn-group" id="reelModeGroup">
+                <button class="btn-choice active" onclick="setReelMode(0)">
+                  1. Штатний рух (a = 0,2 м/с² — ВІЛЬНО)
+                </button>
+                <button class="btn-choice" onclick="setReelMode(1)">
+                  2. Різке гальмування (a = 8,5 м/с² — БЛОКУВАННЯ)
+                </button>
+                <button class="btn-choice" onclick="setReelMode(2)">
+                  3. Робота торсіонного вала (при F > 4,5 кН)
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================================================================
+           СЛАЙД 9: ПІДСУМКИ ТА БЛІЦ-ЗАДАЧІ ДЛЯ КЛАСУ
+           ================================================================ -->
+      <section class="slide" data-slide="8">
+        <div class="slide-top">
+          <span class="slide-type-tag tag-theory">ПІДСУМКИ</span>
+          <h2 class="slide-h1">Зведена таблиця формул та запитання</h2>
+          <div class="slide-eq-header">Безпека = ↑Δt + ↑s + ↑S</div>
+        </div>
+
+        <div class="theory-layout">
+          <div class="theory-col">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>Фізичний закон</th>
+                  <th>Формула</th>
+                  <th>Функція паска</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>I закон Ньютона</strong></td>
+                  <td class="num">∑F⃗ = 0 ⇒ v⃗ = const</td>
+                  <td>Компенсація інерції</td>
+                </tr>
+                <tr>
+                  <td><strong>Кінематика</strong></td>
+                  <td class="num">a = v₀² / (2·s)</td>
+                  <td>Збільшення шляху зупинки s</td>
+                </tr>
+                <tr>
+                  <td><strong>Імпульс сили</strong></td>
+                  <td class="num">F = (m · v₀) / Δt</td>
+                  <td>Збільшення часу удару Δt</td>
+                </tr>
+                <tr>
+                  <td><strong>Енергія і робота</strong></td>
+                  <td class="num">m·v₀² / 2 = F · s</td>
+                  <td>Непружне поглинання енергії</td>
+                </tr>
+                <tr>
+                  <td><strong>Тиск</strong></td>
+                  <td class="num">p = F / S</td>
+                  <td>Збільшення площі контакту S</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <div class="author-stamp" style="margin-top: 8px; margin-bottom: 0;">
+              <div class="author-stamp-label">Дякую за увагу!</div>
+              <div class="author-stamp-name">Дмитренко Андрій Володимирович, 10-А клас</div>
+            </div>
+          </div>
+
+          <div class="theory-col">
+            <div class="qa-block">
+              <div class="qa-question">1. Чому не можна втриматися руками за кермо на швидкості 50 км/год?</div>
+              <button class="btn-choice" onclick="toggleQa(0)">Показати розрахунок</button>
+              <div class="qa-answer" id="qa0">
+                Сила інерційного удару перевищує <strong>20–40 кН (2–4 тонни)</strong>, тоді як руки людини витримують до <strong>1 кН (100 кг)</strong>.
+              </div>
+            </div>
+
+            <div class="qa-block">
+              <div class="qa-question">2. Чому після аварії пасок безпеки підлягає заміні?</div>
+              <button class="btn-choice" onclick="toggleQa(1)">Показати розрахунок</button>
+              <div class="qa-answer" id="qa1">
+                Стрічка зазнає <strong>непружної пластичної деформації</strong>, а торсіонний вал у котушці скручується.
+              </div>
+            </div>
+
+            <div class="qa-block">
+              <div class="qa-question">3. Навіщо пристібатися пасажирам позаду?</div>
+              <button class="btn-choice" onclick="toggleQa(2)">Показати розрахунок</button>
+              <div class="qa-answer" id="qa2">
+                При 60 км/год пасажир позаду має енергію <strong>Eₖ ≈ 10 кДж</strong> і б'є у спинку переднього сидіння з силою у кілька тонн.
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- Нижня навігація -->
+    <footer class="footer-nav">
+      <button class="btn-nav" id="btnPrev" onclick="stepSlide(-1)">← Попередній слайд</button>
+      <div class="page-buttons" id="pageButtons"></div>
+      <button class="btn-nav primary" id="btnNext" onclick="stepSlide(1)">Наступний слайд →</button>
+    </footer>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
