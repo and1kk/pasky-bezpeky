@@ -57,6 +57,37 @@ function syncNavUI() {
 
 document.getElementById("btnFullscreen").addEventListener("click", toggleFullscreen);
 
+const planModal = document.getElementById("planModal");
+document.getElementById("btnPlan").addEventListener("click", openPlanModal);
+document.getElementById("btnClosePlan").addEventListener("click", closePlanModal);
+planModal.addEventListener("click", (e) => {
+  if (e.target === planModal) closePlanModal();
+});
+
+function openPlanModal() {
+  planModal.classList.add("open");
+  planModal.setAttribute("aria-hidden", "false");
+  let activeStep = null;
+  document.querySelectorAll(".plan-step").forEach((el) => {
+    const isCur = Number(el.dataset.planSlide) === currentSlide;
+    el.classList.toggle("current", isCur);
+    if (isCur) activeStep = el;
+  });
+  if (activeStep) {
+    activeStep.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+}
+
+function closePlanModal() {
+  planModal.classList.remove("open");
+  planModal.setAttribute("aria-hidden", "true");
+}
+
+function jumpToSlideFromPlan(idx) {
+  goToSlide(idx);
+  closePlanModal();
+}
+
 function toggleFullscreen() {
   if (!document.fullscreenElement) {
     document.documentElement.requestFullscreen().catch(() => {});
@@ -66,6 +97,19 @@ function toggleFullscreen() {
 }
 
 window.addEventListener("keydown", (e) => {
+  if (e.key === "Escape" && planModal.classList.contains("open")) {
+    e.preventDefault();
+    closePlanModal();
+    return;
+  }
+  if (e.key === "p" || e.key === "P" || e.key === "з" || e.key === "З") {
+    e.preventDefault();
+    if (planModal.classList.contains("open")) closePlanModal();
+    else openPlanModal();
+    return;
+  }
+  if (planModal.classList.contains("open")) return;
+
   if (e.key === "ArrowRight" || e.key === "PageDown") {
     e.preventDefault();
     stepSlide(1);

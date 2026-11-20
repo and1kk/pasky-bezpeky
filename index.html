@@ -16,6 +16,7 @@
         <span class="header-author">Дмитренко Андрій Володимирович, 10-А клас</span>
       </div>
       <div class="header-right">
+        <button class="btn-util btn-plan" id="btnPlan">План виступу [P]</button>
         <button class="btn-util" id="btnFullscreen">На весь екран [F]</button>
       </div>
     </header>
@@ -578,6 +579,198 @@
       <div class="page-buttons" id="pageButtons"></div>
       <button class="btn-nav primary" id="btnNext" onclick="stepSlide(1)">Наступний слайд →</button>
     </footer>
+  </div>
+
+  <!-- Модальне вікно: План виступу для вчителя / доповідача -->
+  <div class="plan-modal" id="planModal" aria-hidden="true" role="dialog" aria-labelledby="planModalTitle">
+    <div class="plan-dialog">
+      <div class="plan-header">
+        <div>
+          <div class="plan-title" id="planModalTitle">План виступу (текст доповіді та дії)</div>
+          <div class="plan-meta">
+            <strong>Виконав:</strong> Дмитренко Андрій Володимирович, 10-А клас •
+            <strong>Тема:</strong> №2. Паски безпеки в транспорті •
+            <strong>Час:</strong> ~7 хвилин
+          </div>
+        </div>
+        <div class="plan-header-actions">
+          <a class="btn-util" href="plan_vystupu.md" target="_blank" rel="noopener">Файл .md</a>
+          <button class="btn-util" id="btnClosePlan">Закрити [Esc]</button>
+        </div>
+      </div>
+
+      <div class="plan-body" id="planBody">
+        <article class="plan-step" data-plan-slide="0">
+          <div class="plan-step-head">
+            <h3>КРОК 1 — Слайд 1 (Титульний)</h3>
+            <button class="btn-choice" onclick="jumpToSlideFromPlan(0)">Відкрити слайд 1</button>
+          </div>
+          <div class="plan-action"><span class="plan-badge">ДІЯ</span> Відкрийте презентацію і натисніть клавішу <strong>F</strong> (повний екран).</div>
+          <blockquote class="plan-speech">
+            <span class="plan-say-label">КАЖЕТЕ:</span>
+            «Добрий день! Мене звати Дмитренко Андрій, 10-А клас. Тема мого проєкту — <strong>«Паски безпеки в транспорті»</strong>.<br>
+            Сьогодні я покажу, як п'ять базових законів фізики 10 класу — інерція, кінематика гальмування, імпульс сили, кінетична енергія та механічний тиск — пояснюють роботу паска безпеки під час аварії.»
+          </blockquote>
+          <div class="plan-action"><span class="plan-badge">ДІЯ</span> Натисніть кнопку <strong>«Почати презентацію →»</strong> (або стрілку <strong>→</strong>).</div>
+        </article>
+
+        <article class="plan-step" data-plan-slide="1">
+          <div class="plan-step-head">
+            <h3>КРОК 2 — Слайд 2 (Теорія: І закон Ньютона)</h3>
+            <button class="btn-choice" onclick="jumpToSlideFromPlan(1)">Відкрити слайд 2</button>
+          </div>
+          <blockquote class="plan-speech">
+            <span class="plan-say-label">КАЖЕТЕ:</span>
+            «Почнемо з <strong>Першого закону Ньютона</strong> — закону інерції: тіло зберігає свою швидкість <strong>v⃗₀</strong> незмінною, поки на нього не подіє зовнішня сила.<br>
+            Коли автомобіль на швидкості 50 км/год (13,9 м/с) врізається в перешкоду, зовнішня сила зупиняє лише кузов авто за рахунок зминання капота на <strong>55 сантиметрів</strong>.<br>
+            На непристебнуту людину сила гальмування ще не діє, тому вона летить уперед за інерцією до удару об кермо і гальмує на шляху лише <strong>4 сантиметри</strong> (0,04 м).<br>
+            За формулою кінематики <strong>a = v₀² / (2s)</strong>, оскільки пасок збільшує гальмівний шлях із 4 до 55 см (майже в 14 разів), у стільки ж разів падає перевантаження — із смертельних <strong>246 g</strong> до безпечних <strong>17,9 g</strong>.»
+          </blockquote>
+          <div class="plan-action"><span class="plan-badge">ДІЯ</span> Натисніть кнопку <strong>«Перейти до показу (Слайд 3) →»</strong> (або стрілку <strong>→</strong>).</div>
+        </article>
+
+        <article class="plan-step" data-plan-slide="2">
+          <div class="plan-step-head">
+            <h3>КРОК 3 — Слайд 3 (Показ №1: Два автомобілі в русі)</h3>
+            <button class="btn-choice" onclick="jumpToSlideFromPlan(2)">Відкрити слайд 3</button>
+          </div>
+          <blockquote class="plan-speech">
+            <span class="plan-say-label">КАЖЕТЕ:</span>
+            «Подивіться на перший інтерактивний показ. Вгорі — автомобіль без паска безпеки, внизу — з триточковим паском. Запускаємо зіткнення на швидкості 50 км/год у сповільненій зйомці.»
+          </blockquote>
+          <div class="plan-action"><span class="plan-badge">ДІЯ</span> Натисніть кнопку <strong>«▶ Запустити [Пробіл]»</strong> (або клавішу <strong>Пробіл</strong>).</div>
+          <blockquote class="plan-speech">
+            <span class="plan-say-label">КАЖЕТЕ (поки йде анімація):</span>
+            «Дивіться, що відбувається: в обох машин капот мнеться однаково. Але у верхньому авто манекен за інерцією з'їжджає з сидіння, б'є колінами в торпедо, грудьми в рульову колонку, а головою розбиває лобове скло.<br>
+            У нижньому авто триточковий пасок фіксує таз у кріслі, грудна клітка плавно нахиляється вперед і зупиняється без жодного удару об кермо.»
+          </blockquote>
+          <div class="plan-action"><span class="plan-badge">ДІЯ</span> Натисніть кнопку <strong>«90 км/год»</strong> і ще раз натисніть <strong>Пробіл</strong>.</div>
+          <blockquote class="plan-speech">
+            <span class="plan-say-label">КАЖЕТЕ:</span>
+            «Навіть якщо збільшити швидкість до трасової — 90 км/год — ми бачимо, як пасок утримує тіло в межах життєвого простору салону.»
+          </blockquote>
+          <div class="plan-action"><span class="plan-badge">ДІЯ</span> Натисніть стрілку <strong>→</strong> (перехід на Слайд 4).</div>
+        </article>
+
+        <article class="plan-step" data-plan-slide="3">
+          <div class="plan-step-head">
+            <h3>КРОК 4 — Слайд 4 (Теорія: Імпульс сили)</h3>
+            <button class="btn-choice" onclick="jumpToSlideFromPlan(3)">Відкрити слайд 4</button>
+          </div>
+          <blockquote class="plan-speech">
+            <span class="plan-say-label">КАЖЕТЕ:</span>
+            «Переходимо до <strong>Другого закону Ньютона в імпульсній формі</strong>: <strong>F⃗ · Δt = Δp⃗</strong>.<br>
+            Людина масою 75 кг на швидкості 15 м/с має імпульс <strong>p = 1125 кг·м/с</strong>. Під час зупинки цей імпульс гаситься до нуля в будь-якому разі — і з паском, і без нього.<br>
+            Але виразимо силу: <strong>Fсер = Δp / Δt</strong>.<br>
+            Без паска удар об кермо триває лише <strong>15 мілісекунд</strong> (0,015 с), тому сила удару сягає <strong>75 кН (7,6 тонни)</strong>.<br>
+            Пасок безпеки розтягує час зупинки Δt у 7–9 разів — до <strong>110–140 мілісекунд</strong>, завдяки чому сила удару падає до <strong>8–10 кН (близько 1 тонни)</strong>. Тобто головне фізичне завдання паска — виграти час Δt.»
+          </blockquote>
+          <div class="plan-action"><span class="plan-badge">ДІЯ</span> Натисніть <strong>«Перейти до стенду краш-тесту (Слайд 5) →»</strong> (або стрілку <strong>→</strong>).</div>
+        </article>
+
+        <article class="plan-step" data-plan-slide="4">
+          <div class="plan-step-head">
+            <h3>КРОК 5 — Слайд 5 (Показ №2: Стенд краш-тесту та графік F(t))</h3>
+            <button class="btn-choice" onclick="jumpToSlideFromPlan(4)">Відкрити слайд 5</button>
+          </div>
+          <blockquote class="plan-speech">
+            <span class="plan-say-label">КАЖЕТЕ:</span>
+            «Перед вами стенд фронтального краш-тесту Euro NCAP на швидкості 64 км/год. Ліворуч — салон авто у розрізі, праворуч — осцилограф сили удару F(t). Спочатку випробуємо режим <strong>без паска</strong>.»
+          </blockquote>
+          <div class="plan-action"><span class="plan-badge">ДІЯ</span> Натисніть кнопку <strong>«Без паска»</strong>, а потім натисніть <strong>«▶ Удар [Пробіл]»</strong>.</div>
+          <blockquote class="plan-speech">
+            <span class="plan-say-label">КАЖЕТЕ:</span>
+            «Час удару об кермо — лише 18 мс. На графіку праворуч виростає величезний червоний пік сили понад <strong>74 кН</strong>, а перевантаження в таблиці внизу становить <strong>100 g</strong> при межі виживання людини близько 40 g.»
+          </blockquote>
+          <div class="plan-action"><span class="plan-badge">ДІЯ</span> Натисніть кнопку <strong>«3-точковий пасок»</strong> і натисніть <strong>«▶ Удар [Пробіл]»</strong>.</div>
+          <blockquote class="plan-speech">
+            <span class="plan-say-label">КАЖЕТЕ:</span>
+            «Тепер пристебнули триточковий пасок. Зверніть увагу на графік: площа під кривою (імпульс <strong>Δp = 1333 Н·с</strong>) залишилася тією самою, але час розтягнувся до <strong>95 мс</strong>! Через це пік сили опустився нижче небезпечної лінії — до <strong>14 кН (19 g)</strong>.»
+          </blockquote>
+          <div class="plan-action"><span class="plan-badge">ДІЯ</span> Натисніть кнопку <strong>«Пасок + Airbag»</strong> і натисніть <strong>«▶ Удар [Пробіл]»</strong>.</div>
+          <blockquote class="plan-speech">
+            <span class="plan-say-label">КАЖЕТЕ:</span>
+            «А якщо додати подушку безпеки Airbag, час зупинки зростає до <strong>130 мс</strong>, сила падає до <strong>10 кН (14 g)</strong>, а голова м'яко гальмує об подушку. До речі, без паска подушка не рятує, бо вона вистрілює назустріч зі швидкістю 300 км/год, і саме пасок має утримати людину ті 30 мс, поки подушка розкривається.»
+          </blockquote>
+          <div class="plan-action"><span class="plan-badge">ДІЯ</span> Натисніть стрілку <strong>→</strong> (перехід на Слайд 6).</div>
+        </article>
+
+        <article class="plan-step" data-plan-slide="5">
+          <div class="plan-step-head">
+            <h3>КРОК 6 — Слайд 6 (Теорія: Кінетична енергія та тиск)</h3>
+            <button class="btn-choice" onclick="jumpToSlideFromPlan(5)">Відкрити слайд 6</button>
+          </div>
+          <blockquote class="plan-speech">
+            <span class="plan-say-label">КАЖЕТЕ:</span>
+            «У третьому розділі об'єднані два закони:<br>
+            Перший — <strong>теорема про кінетичну енергію</strong>: <strong>Eₖ = mv² / 2 = F · s</strong>. Оскільки швидкість стоїть <strong>у квадраті</strong>, при збільшенні швидкості вдвічі енергія удару зростає в <strong>4 рази</strong>. Причому стрічка паска розтягується <strong>непружно</strong>, перетворюючи цю енергію на тепло, щоб не відкинути людину назад, як гума.<br>
+            Другий закон — <strong>механічний тиск</strong>: <strong>p = F / S</strong>. Щоб сила в півтори тонни не порізала тіло, площа контакту S має бути великою. Тому інженер Volvo Нільс Болін у 1959 році створив триточковий пасок завширшки <strong>47 мм</strong> із площею прилягання <strong>280 см²</strong>.»
+          </blockquote>
+          <div class="plan-action"><span class="plan-badge">ДІЯ</span> Натисніть <strong>«Перейти до показу енергії та тиску (Слайд 7) →»</strong> (або стрілку <strong>→</strong>).</div>
+        </article>
+
+        <article class="plan-step" data-plan-slide="6">
+          <div class="plan-step-head">
+            <h3>КРОК 7 — Слайд 7 (Показ №3: Висота падіння та тиск на скелет)</h3>
+            <button class="btn-choice" onclick="jumpToSlideFromPlan(6)">Відкрити слайд 7</button>
+          </div>
+          <blockquote class="plan-speech">
+            <span class="plan-say-label">КАЖЕТЕ:</span>
+            «Ліворуч показано порівняння кінетичної енергії авто з вільним падінням із даху будинку за формулою <strong>h = v² / (2g)</strong>.<br>
+            Зараз стоїть міська швидкість <strong>50 км/год</strong> — це падіння з висоти <strong>9,8 метра (3-й поверх)</strong>. А тепер увімкнемо <strong>100 км/год</strong>.»
+          </blockquote>
+          <div class="plan-action"><span class="plan-badge">ДІЯ</span> Натисніть кнопку <strong>«100 км/год»</strong> у лівій панелі.</div>
+          <blockquote class="plan-speech">
+            <span class="plan-say-label">КАЖЕТЕ:</span>
+            «Швидкість зросла вдвічі, а висота падіння зросла в 4 рази — до <strong>39,3 метра, тобто 13-го поверху</strong>!<br>
+            Тепер подивіться праворуч на розподіл тиску при силі удару 14 кН:»
+          </blockquote>
+          <div class="plan-action"><span class="plan-badge">ДІЯ</span> По черзі натисніть кнопки праворуч: <strong>«Вузький трос (6 мм)»</strong> → <strong>«2-точковий ремінь»</strong> → <strong>«3-точковий пасок (47 мм)»</strong>.</div>
+          <blockquote class="plan-speech">
+            <span class="plan-say-label">КАЖЕТЕ:</span>
+            «Вузький трос дає тиск <strong>4000 кПа</strong> і розрізає тканини. Старий двоточковий ремінь тисне на м'який живіт (<strong>1000 кПа</strong>). А сучасний триточковий пасок зменшує тиск у 8 разів (<strong>500 кПа</strong>) і передає навантаження виключно на міцні кістки: <strong>ключицю, грудину та таз</strong>.»
+          </blockquote>
+          <div class="plan-action"><span class="plan-badge">ДІЯ</span> Натисніть стрілку <strong>→</strong> (перехід на Слайд 8).</div>
+        </article>
+
+        <article class="plan-step" data-plan-slide="7">
+          <div class="plan-step-head">
+            <h3>КРОК 8 — Слайд 8 (Показ №4: Інерційна котушка в розрізі)</h3>
+            <button class="btn-choice" onclick="jumpToSlideFromPlan(7)">Відкрити слайд 8</button>
+          </div>
+          <blockquote class="plan-speech">
+            <span class="plan-say-label">КАЖЕТЕ:</span>
+            «Як котушка паска без жодної електроніки розуміє, коли блокуватися? Усередині працює чиста механіка.<br>
+            Зараз увімкнено <strong>Режим 1 (Штатний рух)</strong>: сталева кулька внизу лежить на дні лунки, храпова собачка опущена, і барабан вільно крутиться.<br>
+            Тепер імітуємо різке гальмування з прискоренням понад <strong>0,7 g</strong>.»
+          </blockquote>
+          <div class="plan-action"><span class="plan-badge">ДІЯ</span> Натисніть кнопку <strong>«2. Різке гальмування (a = 8,5 м/с² — БЛОКУВАННЯ)»</strong>.</div>
+          <blockquote class="plan-speech">
+            <span class="plan-say-label">КАЖЕТЕ:</span>
+            «Кузов зупиняється, а важка сталева кулька внизу за <strong>Першим законом Ньютона (інерцією)</strong> котиться вперед по похилій чаші і піднімає червону храпову собачку прямо в зубці барабана за <strong>18 мілісекунд</strong>! Ремінь заблоковано.»
+          </blockquote>
+          <div class="plan-action"><span class="plan-badge">ДІЯ</span> Натисніть кнопку <strong>«3. Робота торсіонного вала (при F > 4,5 кН)»</strong>.</div>
+          <blockquote class="plan-speech">
+            <span class="plan-say-label">КАЖЕТЕ:</span>
+            «А коли сила натягу перевищує <strong>4,5 кН</strong>, сталевий торсіонний вал у центрі котушки контрольовано скручується (ви бачите поворот жовтої мітки у центрі), відпускаючи кілька сантиметрів стрічки, щоб не зламати ребра людині.»
+          </blockquote>
+          <div class="plan-action"><span class="plan-badge">ДІЯ</span> Натисніть стрілку <strong>→</strong> (перехід на Слайд 9).</div>
+        </article>
+
+        <article class="plan-step" data-plan-slide="8">
+          <div class="plan-step-head">
+            <h3>КРОК 9 — Слайд 9 (Підсумки та бліц для класу)</h3>
+            <button class="btn-choice" onclick="jumpToSlideFromPlan(8)">Відкрити слайд 9</button>
+          </div>
+          <blockquote class="plan-speech">
+            <span class="plan-say-label">КАЖЕТЕ:</span>
+            «Підсумуємо: пасок безпеки рятує життя за рахунок трьох головних фізичних дій — збільшує шлях гальмування <strong>s</strong> (з 4 до 55 см), збільшує час зупинки <strong>Δt</strong> (з 15 до 120 мс) і збільшує площу опори <strong>S</strong> (до 280 см²).<br>
+            Праворуч на слайді є три короткі фізичні задачі-питання — якщо є час, можемо їх розібрати. Дякую за увагу!»
+          </blockquote>
+          <div class="plan-action"><span class="plan-badge">ДІЯ (за бажанням вчителя)</span> Натискаєте кнопки <strong>«Показати розрахунок»</strong> під питаннями 1, 2, 3.</div>
+        </article>
+      </div>
+    </div>
   </div>
 
   <script src="app.js"></script>
